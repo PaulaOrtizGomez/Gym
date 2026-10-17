@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+:root {
+  /* ==============================
+     PALETA GYM TRACKER
+     Rosa pastel premium
+     ============================== */
+
+  --color-background: #fff9fc;
+  --color-surface: #ffffff;
+  --color-surface-soft: #fff0f5;
+
+  --color-text-primary: #2a2228;
+  --color-text-secondary: #746870;
+  --color-text-disabled: #a99da4;
+
+  /* Rosa accesible para texto, iconos y estados activos */
+  --color-primary: #b44f7c;
+  --color-primary-hover: #9f426c;
+
+  /* Rosa pastel suave */
+  --color-primary-soft: #f9dde7;
+
+  /* Botón principal pastel */
+  --color-button-primary: #efa3bc;
+  --color-button-primary-hover: #e78fae;
+  --color-button-text: #211c24;
+
+  /*
+   * Alias de compatibilidad.
+   * Algunos componentes creados durante
+   * el desarrollo todavía usan estos nombres.
+   */
+  --color-primary-button:
+    var(--color-button-primary);
+
+  --color-primary-button-hover:
+    var(--color-button-primary-hover);
+
+  /* Complementarios */
+  --color-secondary: #c7afe9;
+  --color-accent: #e8ce91;
+
+  /* Estados */
+  --color-success: #579474;
+  --color-warning: #b88745;
+  --color-danger: #c65d70;
+
+  --color-border: #eedee5;
+
+  /* ==============================
+     BORDES
+     ============================== */
+
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+
+  /* ==============================
+     SOMBRAS
+     ============================== */
+
+  --shadow-soft:
+    0 4px 20px rgba(92, 52, 70, 0.06);
+
+  --shadow-card:
+    0 8px 30px rgba(92, 52, 70, 0.08);
+
+  /* ==============================
+     TIPOGRAFÍA
+     ============================== */
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: var(--color-text-primary);
+  background: var(--color-background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--color-background);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--color-text-primary);
+  background: var(--color-background);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(180, 79, 124, 0.3);
+  outline-offset: 3px;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* ==============================================
+   GYM TRACKER · APARIENCIA PERSONALIZABLE
+   La base sigue siendo rosa pastel / modo claro.
+   Se guardan las preferencias en Dexie v4.
+   ============================================== */
+:root {
+  --gym-accent: #f3a4bd;
+  --gym-font: "Arial Rounded MT Bold", "Trebuchet MS", Verdana, sans-serif;
+  --color-button-primary: var(--gym-accent);
+  --color-button-primary-hover: color-mix(in srgb, var(--gym-accent) 80%, #a64478);
+  --color-primary: color-mix(in srgb, var(--gym-accent) 48%, #642040);
+  --color-primary-hover: color-mix(in srgb, var(--gym-accent) 32%, #642040);
+  --color-primary-soft: color-mix(in srgb, var(--gym-accent) 27%, #ffffff);
+  --color-surface-soft: color-mix(in srgb, var(--gym-accent) 10%, #ffffff);
+  --color-border: color-mix(in srgb, var(--gym-accent) 18%, #e9e2e8);
+  font-family: var(--gym-font);
+}
+
+:root[data-font='nunito'] {
+  --gym-font: "Arial Rounded MT Bold", "Trebuchet MS", Verdana, sans-serif;
+}
+:root[data-font='modern'] {
+  --gym-font: "Century Gothic", "Trebuchet MS", Arial, sans-serif;
+}
+:root[data-font='system'] {
+  --gym-font: "Segoe UI", system-ui, sans-serif;
+}
+
+:root[data-font-scale='small'] { font-size: 15px; }
+:root[data-font-scale='normal'] { font-size: 16px; }
+:root[data-font-scale='large'] { font-size: 18px; }
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-background: #17151d;
+  --color-surface: #25212e;
+  --color-surface-soft: color-mix(in srgb, var(--gym-accent) 12%, #25212e);
+  --color-text-primary: #f8f2f7;
+  --color-text-secondary: #c7b9c7;
+  --color-text-disabled: #9f92a1;
+  --color-border: color-mix(in srgb, var(--gym-accent) 17%, #48404f);
+  --color-primary: color-mix(in srgb, var(--gym-accent) 78%, white);
+  --color-primary-hover: color-mix(in srgb, var(--gym-accent) 68%, white);
+  --color-primary-soft: color-mix(in srgb, var(--gym-accent) 22%, #25212e);
+  --color-button-primary: var(--gym-accent);
+  --color-button-primary-hover: color-mix(in srgb, var(--gym-accent) 80%, #ffffff);
+  --color-button-text: #211c24;
+  --color-success: #a8dfb8;
+  --color-warning: #e6c284;
+  --color-danger: #ff9caa;
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, .16);
+  --shadow-card: 0 8px 28px rgba(0, 0, 0, .2);
+}
+
+/* Los módulos históricos contienen colores rosas literales.
+   Este puente los vincula a la paleta personalizable sin
+   modificar su lógica ni sus registros. */
+:root [class~='bg-[#F3A4BD]'] { background-color: var(--color-button-primary) !important; }
+:root [class~='bg-[#E30B5D]'] { background-color: var(--color-primary) !important; }
+:root [class~='bg-[#FFF9FC]'] { background-color: var(--color-background) !important; }
+:root [class~='bg-[#FFF0F6]'] { background-color: var(--color-surface-soft) !important; }
+:root [class~='bg-[#FDE0EA]'] { background-color: var(--color-primary-soft) !important; }
+:root [class~='hover:bg-[#EC8EAC]']:hover { background-color: var(--color-button-primary-hover) !important; }
+:root [class~='hover:bg-[#FFF0F6]']:hover,
+:root [class~='hover:bg-[#FFF9FC]']:hover { background-color: var(--color-surface-soft) !important; }
+:root [class~='border-[#F3D6E2]'],
+:root [class~='border-[#EFDCE5]'] { border-color: var(--color-border) !important; }
+:root [class~='border-[#E30B5D]'] { border-color: var(--color-primary) !important; }
+:root [class~='focus:border-[#E30B5D]']:focus { border-color: var(--color-primary) !important; }
+:root [class~='text-[#E30B5D]'],
+:root [class~='text-[#A3275A]'],
+:root [class~='text-[#B44F7C]'] { color: var(--color-primary) !important; }
+:root [class~='text-[#766A74]'],
+:root [class~='text-[#746870]'] { color: var(--color-text-secondary) !important; }
+:root [class~='text-[#2A2228]'] { color: var(--color-text-primary) !important; }
+:root [class~='bg-[#F3A4BD]'][class~='text-[#2A2228]'] { color: var(--color-button-text) !important; }
+
+:root[data-theme='dark'] [class~='bg-white'] { background-color: var(--color-surface) !important; }
+:root[data-theme='dark'] [class~='bg-[#F2FBF5]'] { background-color: #193c2a !important; }
+:root[data-theme='dark'] [class~='text-[#256345]'],
+:root[data-theme='dark'] [class~='text-[#579474]'] { color: #b8edc8 !important; }
+:root[data-theme='dark'] [class~='bg-[#E30B5D]'][class~='text-white'] { color: #211c24 !important; }
+
+:root button:focus-visible,
+:root input:focus-visible,
+:root textarea:focus-visible,
+:root select:focus-visible {
+  outline-color: color-mix(in srgb, var(--gym-accent) 60%, transparent);
+}
